@@ -22,16 +22,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-Bc-EPK">
+                                <rect key="frame" x="87.666666666666686" y="306" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0Ud-ex-j1u"/>
+                                    <constraint firstAttribute="width" constant="200" id="AOC-j6-bhv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fyR-Bc-EPK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7QG-lF-gLS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4rd-pd-Bsx" secondAttribute="trailing" constant="20" id="M9e-cA-hoB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4rd-pd-Bsx" secondAttribute="bottom" constant="20" id="Nee-DC-RfY"/>
                             <constraint firstItem="4rd-pd-Bsx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xa8-rW-0iq"/>
+                            <constraint firstItem="fyR-Bc-EPK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nZM-Cs-rF6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="fyR-Bc-EPK" id="KyQ-eb-AyY"/>
                         <outlet property="nameLbl" destination="4rd-pd-Bsx" id="e4I-Dg-JIv"/>
                     </connections>
                 </viewController>
@@ -43,6 +54,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

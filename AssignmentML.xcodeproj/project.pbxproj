@@ -13,8 +13,7 @@
 		4863434127E82FCC00CC40A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4863433F27E82FCC00CC40A8 /* Main.storyboard */; };
 		4863434327E82FCD00CC40A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4863434227E82FCD00CC40A8 /* Assets.xcassets */; };
 		4863434627E82FCD00CC40A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4863434427E82FCD00CC40A8 /* LaunchScreen.storyboard */; };
-		4863435027E8400B00CC40A8 /* SqueezeNet.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4863434F27E8400B00CC40A8 /* SqueezeNet.mlkitmodel */; };
-		4863435227E8478900CC40A8 /* Resnet50.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4863435127E8478900CC40A8 /* Resnet50.mlkitmodel */; };
+		4863435827E87ADA00CC40A8 /* Resnet50.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4863435727E87ADA00CC40A8 /* Resnet50.mlkitmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +25,7 @@
 		4863434227E82FCD00CC40A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4863434527E82FCD00CC40A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4863434727E82FCD00CC40A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4863434F27E8400B00CC40A8 /* SqueezeNet.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlkitmodel; path = ../../../../../../SqueezeNet.mlkitmodel; sourceTree = "<group>"; };
-		4863435127E8478900CC40A8 /* Resnet50.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlkitmodel; path = ../../../../../../Resnet50.mlkitmodel; sourceTree = "<group>"; };
+		4863435727E87ADA00CC40A8 /* Resnet50.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlkitmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +58,7 @@
 		4863433827E82FCC00CC40A8 /* AssignmentML */ = {
 			isa = PBXGroup;
 			children = (
-				4863434F27E8400B00CC40A8 /* SqueezeNet.mlkitmodel */,
-				4863435127E8478900CC40A8 /* Resnet50.mlkitmodel */,
+				4863435727E87ADA00CC40A8 /* Resnet50.mlkitmodel */,
 				4863433927E82FCC00CC40A8 /* AppDelegate.swift */,
 				4863433B27E82FCC00CC40A8 /* SceneDelegate.swift */,
 				4863433D27E82FCC00CC40A8 /* ViewController.swift */,
@@ -145,9 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4863433E27E82FCC00CC40A8 /* ViewController.swift in Sources */,
+				4863435827E87ADA00CC40A8 /* Resnet50.mlkitmodel in Sources */,
 				4863433A27E82FCC00CC40A8 /* AppDelegate.swift in Sources */,
-				4863435027E8400B00CC40A8 /* SqueezeNet.mlkitmodel in Sources */,
-				4863435227E8478900CC40A8 /* Resnet50.mlkitmodel in Sources */,
 				4863433C27E82FCC00CC40A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

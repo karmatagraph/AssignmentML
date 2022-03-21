@@ -11,6 +11,7 @@ import Vision
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var imageView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // camera setup using AVKit
         let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .photo
+//        captureSession.sessionPreset = .photo
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
@@ -28,10 +29,18 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // to show the captured video on the view
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(previewLayer)
         
-        // we need to set the frame of the preview layer
-        previewLayer.frame = view.frame
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            // we need to set the frame of the preview layer
+            previewLayer.frame = self.imageView.bounds
+            self.imageView.layer.addSublayer(previewLayer)
+        }
+        
+        
+        
+        
+        
+        
         
         // monitoring every frame captured by the camera
         let dataOutput = AVCaptureVideoDataOutput()
