@@ -10,13 +10,15 @@ import AVKit
 import Vision
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-
+    @IBOutlet weak var nameLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // camera setup using AVKit
         let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
@@ -50,13 +52,26 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         //config for model
         let defaultConfig = MLModelConfiguration()
         // create model
-        guard let model = try? VNCoreMLModel(for: SqueezeNet(configuration: defaultConfig).model) else{return}
+        guard let model = try? VNCoreMLModel(for: Resnet50(configuration: defaultConfig).model) else{return}
         
         let request = VNCoreMLRequest(model: model){
             (finishedReq , error) in
             // check the error and print result
-            print(finishedReq.results)
+//            print(finishedReq.results)
+            // get the prediction
+            guard let results = finishedReq.results as? [VNClassificationObservation] else {return}
+            
+            guard let firstObservation = results.first else {return}
+            
+            DispatchQueue.main.async {
+                let confi = Int(firstObservation.confidence*100)
+                self.nameLbl.text = firstObservation.identifier + ". Accuracy: " + String(confi)
+            }
+            print(firstObservation.identifier, firstObservation.confidence)
+            
         }
+        
+        
 
         // this is responsible for analysing the image
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
